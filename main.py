@@ -1,16 +1,8 @@
-# Removing duplicate items from the list without using set
+def highest_even(list):
+    highest_even = 0
+    for item in list:
+        if item > highest_even and item % 2 == 0:
+            highest_even = item
+    return highest_even
 
-some_list = ['a','b','c','b','d','m','n','n']
-print(f"Original list: {some_list}")
-
-position = 1
-index = 0
-for item in some_list:
-  index = position
-  while index < len(some_list):
-    if str(item) == str(some_list[index]):
-      some_list.pop(index)
-    index += 1 
-  position += 1
- 
-print(f"Final list: {some_list}")
+print(highest_even([2,5,9,0,-4,8]))
